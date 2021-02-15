@@ -11,7 +11,7 @@ import SwiftUI
 import AVKit
 
 
-class ViewController: UIViewController {
+class VoiceRecorderViewController: UIViewController {
     
     var longgesture : UILongPressGestureRecognizer?
     var url: URL?
@@ -87,3 +87,4 @@ struct ViewController_Previews: PreviewProvider {
         /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
+

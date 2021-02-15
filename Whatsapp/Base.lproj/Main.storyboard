@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fev-gc-eMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jPW-C8-F8Z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Page View Controller-->
+        <scene sceneID="upf-0r-AGw">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jPW-C8-F8Z" customClass="PageViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bP1-x9-fof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245" y="-567"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="NXm-iu-hBB">
+            <objects>
+                <viewController id="Olw-jj-JSm" customClass="ImageViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1yW-1x-hNN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-P2-NY9">
+                                <rect key="frame" x="107" y="175" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ahI-C3-XQu"/>
+                                    <constraint firstAttribute="height" constant="200" id="uHu-cP-TT1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-2j-PJV">
+                                <rect key="frame" x="107" y="550" width="200" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Jjs-aO-ht4"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3bs-P2-NY9" firstAttribute="centerX" secondItem="1yW-1x-hNN" secondAttribute="centerX" id="DH7-Ua-HZX"/>
+                            <constraint firstItem="3bs-P2-NY9" firstAttribute="top" secondItem="srL-Jj-0i4" secondAttribute="top" constant="131" id="S4h-f4-ebl"/>
+                            <constraint firstItem="HGM-2j-PJV" firstAttribute="centerX" secondItem="3bs-P2-NY9" secondAttribute="centerX" id="XnO-eG-4VR"/>
+                            <constraint firstItem="srL-Jj-0i4" firstAttribute="bottom" secondItem="HGM-2j-PJV" secondAttribute="bottom" constant="282" id="olp-Ji-qCc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="srL-Jj-0i4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZ1-4y-k8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-604" y="-567"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="UUF-Ur-RHa">
+            <objects>
+                <viewController id="yOD-R7-Dc1" customClass="VideoPlayerViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G04-1t-3sO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="cQE-3b-rV2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5R-iJ-mqm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="-567"/>
+        </scene>
+        <!--Voice Recorder View Controller-->
         <scene sceneID="QVC-Lt-jw7">
             <objects>
-                <viewController id="fev-gc-eMB" customClass="ViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fev-gc-eMB" customClass="VoiceRecorderViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xj5-Gq-OjX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55q-bY-b9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100.00000000000001" y="-565.17857142857144"/>
+            <point key="canvasLocation" x="741" y="-567"/>
         </scene>
     </scenes>
 </document>
