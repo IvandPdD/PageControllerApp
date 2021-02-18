@@ -11,62 +11,65 @@ import UIKit
 
 class PageViewController: UIPageViewController{
     
+    private var pageController: UIPageViewController?
+    
+    var vistas: [UIViewController]?
+    
+    var currentIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        dataSource = self
-            
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                direction: .Forward,
-                animated: true,
-                completion: nil)
-        }
+        vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC"),
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerVC"),
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoiceRecorderVC")]
+        setupPageController()
+    }
+    func setupPageController() {
+       self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        self.pageController?.dataSource = self
+        self.pageController?.delegate = self
+        self.pageController?.view.backgroundColor = .clear
+        self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
+        self.addChild(self.pageController!)
+        self.view.addSubview(self.pageController!.view)
+        self.pageController?.didMove(toParent: self)
+       
+       let initialVC = viewControllers![0]
+       
+       self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true, completion: nil)
+       
+       self.pageController?.didMove(toParent: self)
     }
 }
 
-extension PageViewController: UIPageViewControllerDataSource{
+extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController,
-        viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
-                return nil
-            }
-            
-            let previousIndex = viewControllerIndex - 1
-            
-            // User is on the first view controller and swiped left to loop to
-            // the last view controller.
-            guard previousIndex >= 0 else {
-                return orderedViewControllers.last
-            }
-            
-            guard orderedViewControllers.count > previousIndex else {
-                return nil
-            }
-            
-            return orderedViewControllers[previousIndex]
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        
+        var index = vistas!.firstIndex(of: pageViewController.presentedViewController!)!
+        
+        if (index < 0){
+            return vistas![2]
+        } else {
+            index -= 1
+        }
+        
+        return vistas![index]
+        //return UIViewController()
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        if (currentIndex > 2){
+            currentIndex = 0
+        } else {
+            currentIndex += 1
+        }
+        
+        return vistas![currentIndex]
+        //return UIViewController()
     }
 
-    func pageViewController(pageViewController: UIPageViewController,
-        viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
-                return nil
-            }
-            
-            let nextIndex = viewControllerIndex + 1
-            let orderedViewControllersCount = orderedViewControllers.count
-            
-            // User is on the last view controller and swiped right to loop to
-            // the first view controller.
-            guard orderedViewControllersCount != nextIndex else {
-                return orderedViewControllers.first
-            }
-            
-            guard orderedViewControllersCount > nextIndex else {
-                return nil
-            }
-            
-            return orderedViewControllers[nextIndex]
-    }
 }
+

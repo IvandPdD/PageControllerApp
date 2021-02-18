@@ -18,7 +18,7 @@
         <!--Image View Controller-->
         <scene sceneID="NXm-iu-hBB">
             <objects>
-                <viewController id="Olw-jj-JSm" customClass="ImageViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Olw-jj-JSm" customClass="ImageViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yW-1x-hNN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
         <!--Video Player View Controller-->
         <scene sceneID="UUF-Ur-RHa">
             <objects>
-                <viewController id="yOD-R7-Dc1" customClass="VideoPlayerViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoPlayerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yOD-R7-Dc1" customClass="VideoPlayerViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G04-1t-3sO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
         <!--Voice Recorder View Controller-->
         <scene sceneID="QVC-Lt-jw7">
             <objects>
-                <viewController id="fev-gc-eMB" customClass="VoiceRecorderViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VoiceRecorderVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fev-gc-eMB" customClass="VoiceRecorderViewController" customModule="Whatsapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xj5-Gq-OjX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

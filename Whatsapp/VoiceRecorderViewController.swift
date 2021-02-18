@@ -24,8 +24,8 @@ class VoiceRecorderViewController: UIViewController {
         
         micButton.setImage(UIImage(named: "Mic Off"), for: .normal)
         
-        micButton.addTarget(self, action: #selector(ViewController.touchDownEvent), for: .touchDown)
-        micButton.addTarget(self, action: #selector(ViewController.touchUpEvent), for: [.touchUpInside, .touchUpOutside])
+        micButton.addTarget(self, action: #selector(VoiceRecorderViewController.touchDownEvent), for: .touchDown)
+        micButton.addTarget(self, action: #selector(VoiceRecorderViewController.touchUpEvent), for: [.touchUpInside, .touchUpOutside])
 
         let fichero = "grabacion.wav"
 
