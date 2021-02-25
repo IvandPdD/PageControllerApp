@@ -9,36 +9,38 @@
 import Foundation
 import UIKit
 
-class PageViewController: UIPageViewController{
+class PageViewController: UIViewController{
     
     private var pageController: UIPageViewController?
     
     var vistas: [UIViewController]?
-    
-    var currentIndex: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerVC"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoiceRecorderVC")]
         setupPageController()
     }
+    
     func setupPageController() {
-       self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        
+        let initialVC = vistas![0]
+        
+        self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true, completion: nil)
+
         self.pageController?.dataSource = self
         self.pageController?.delegate = self
-        self.pageController?.view.backgroundColor = .clear
+        /*self.pageController?.view.backgroundColor = .clear
         self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
         self.addChild(self.pageController!)
         self.view.addSubview(self.pageController!.view)
-        self.pageController?.didMove(toParent: self)
-       
-       let initialVC = viewControllers![0]
-       
-       self.pageController?.setViewControllers([initialVC], direction: .forward, animated: true, completion: nil)
-       
-       self.pageController?.didMove(toParent: self)
+        self.pageController?.didMove(toParent: self)*/
+        self.navigationController?.pushViewController(pageController!, animated: true)
+        
     }
 }
 
@@ -48,28 +50,31 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         
-        var index = vistas!.firstIndex(of: pageViewController.presentedViewController!)!
+        var index = self.vistas!.firstIndex(of: viewController)!
         
         if (index < 0){
-            return vistas![2]
+            return self.vistas![2]
         } else {
             index -= 1
         }
         
-        return vistas![index]
+        return self.vistas![index]
         //return UIViewController()
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        if (currentIndex > 2){
-            currentIndex = 0
+        var index = self.vistas!.firstIndex(of: viewController)!
+        
+        if (index > 2){
+            return self.vistas![0]
         } else {
-            currentIndex += 1
+            index += 1
         }
         
-        return vistas![currentIndex]
+        return self.vistas![index]
         //return UIViewController()
     }
+    
 
 }
 
