@@ -52,7 +52,7 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         
         var index = self.vistas!.firstIndex(of: viewController)!
         
-        if (index < 0){
+        if (index <= 0){
             return self.vistas![2]
         } else {
             index -= 1
@@ -65,7 +65,7 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         
         var index = self.vistas!.firstIndex(of: viewController)!
         
-        if (index > 2){
+        if (index >= 2){
             return self.vistas![0]
         } else {
             index += 1
