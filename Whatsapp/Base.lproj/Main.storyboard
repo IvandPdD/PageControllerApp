@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1R-DP-Fnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3033" y="-567"/>
+            <point key="canvasLocation" x="-2283" y="-567"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="eAn-Is-UA7">
@@ -37,15 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJC-Qv-V7G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2104" y="-567"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="upf-0r-AGw">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jPW-C8-F8Z" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bP1-x9-fof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1245" y="-567"/>
+            <point key="canvasLocation" x="-1504" y="-567"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="NXm-iu-hBB">
