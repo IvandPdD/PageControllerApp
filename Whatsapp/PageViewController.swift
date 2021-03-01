@@ -17,6 +17,7 @@ class PageViewController: UIViewController{
     
     var vistas: [UIViewController]?
 
+    @IBOutlet weak var pageDots: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +25,12 @@ class PageViewController: UIViewController{
         vistas = [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoPlayerVC"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VoiceRecorderVC")]
+        
         setupPageController()
     }
     
     func setupPageController() {
+        
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
           
         let initialVC = vistas![0]
@@ -36,32 +39,22 @@ class PageViewController: UIViewController{
 
         self.pageController?.dataSource = self
         self.pageController?.delegate = self
-        self.pageController?.view.backgroundColor = .clear
-        /*self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
-        self.addChild(self.pageController!)
         self.view.addSubview(self.pageController!.view)
-        self.pageController?.didMove(toParent: self)*/
-
-        self.navigationController?.pushViewController(pageController!, animated: true)
+        
+        self.view.bringSubviewToFront(pageDots)
+        self.pageDots.numberOfPages = vistas!.count
+        self.pageDots.currentPage = 0
+        
         
     }
 }
 
 extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return vistas!.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return currentIndex
-    }
-    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        
         var index = self.vistas!.firstIndex(of: viewController)!
-        currentIndex = self.vistas!.firstIndex(of: viewController)!
+        
         if (index <= 0){
             return self.vistas?.last
         } else {
@@ -69,12 +62,11 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         }
         
         return self.vistas![index]
-        //return UIViewController()
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         var index = self.vistas!.firstIndex(of: viewController)!
-        currentIndex = self.vistas!.firstIndex(of: viewController)!
+        
         if (index >= 2){
             return self.vistas?.first
         } else {
@@ -82,9 +74,17 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         }
         
         return self.vistas![index]
-        //return UIViewController()
     }
     
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        
+        self.currentIndex = self.vistas!.firstIndex(of: pendingViewControllers.first!)!
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        self.pageDots.currentPage = self.currentIndex
+    }
 
 }
 
