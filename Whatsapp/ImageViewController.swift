@@ -42,8 +42,4 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate & U
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func next(_ sender: Any) {
-        
-    }
 }

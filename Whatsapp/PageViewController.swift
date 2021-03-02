@@ -44,8 +44,7 @@ class PageViewController: UIViewController{
         self.view.bringSubviewToFront(pageDots)
         self.pageDots.numberOfPages = vistas!.count
         self.pageDots.currentPage = 0
-        
-        
+
     }
 }
 

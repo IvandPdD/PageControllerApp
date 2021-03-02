@@ -100,14 +100,24 @@
                     <view key="view" contentMode="scaleToFill" id="G04-1t-3sO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1Y-si-xCB">
+                                <rect key="frame" x="50" y="135" width="315" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cQE-3b-rV2"/>
                     </view>
                     <navigationItem key="navigationItem" id="5w8-sP-FOr"/>
+                    <connections>
+                        <outlet property="videoView" destination="H1Y-si-xCB" id="kMb-Rw-YOU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5R-iJ-mqm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="-567"/>
+            <point key="canvasLocation" x="63.768115942028992" y="-567.1875"/>
         </scene>
         <!--Voice Recorder View Controller-->
         <scene sceneID="QVC-Lt-jw7">

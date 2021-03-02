@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3371244F25EE9E170092D1B8 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3371244E25EE8E710092D1B8 /* videoplayback.mp4 */; };
 		339A5A1525DB018D00333ADE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1425DB018D00333ADE /* PageViewController.swift */; };
 		339A5A1725DB032300333ADE /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1625DB032300333ADE /* ImageViewController.swift */; };
 		339A5A1925DB048E00333ADE /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A5A1825DB048E00333ADE /* VideoPlayerViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3371244E25EE8E710092D1B8 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		339A5A1425DB018D00333ADE /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		339A5A1625DB032300333ADE /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		339A5A1825DB048E00333ADE /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		7F20690B25D5A73200121268 /* Whatsapp */ = {
 			isa = PBXGroup;
 			children = (
+				3371244E25EE8E710092D1B8 /* videoplayback.mp4 */,
 				7F20690C25D5A73200121268 /* AppDelegate.swift */,
 				7F20690E25D5A73200121268 /* SceneDelegate.swift */,
 				339A5A1425DB018D00333ADE /* PageViewController.swift */,
@@ -136,6 +139,7 @@
 			files = (
 				7F20691925D5A73400121268 /* LaunchScreen.storyboard in Resources */,
 				7F20691625D5A73400121268 /* Assets.xcassets in Resources */,
+				3371244F25EE9E170092D1B8 /* videoplayback.mp4 in Resources */,
 				7F20691425D5A73200121268 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
